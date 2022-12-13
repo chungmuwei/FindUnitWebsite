@@ -1,0 +1,29 @@
+{% include 'header.html' %}
+
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- body -->
+                <br/>
+                <h2 class="col-md-6 offset-md-3 ">A better way to find USYD units info!</h2>
+                <br/>
+                <div class="col-md-6 offset-md-3">
+                    <!-- action: 要把form傳送到哪個網頁處理 -->
+                    <!-- method: 要用什麼方法傳送 -->
+                    <form method="POST" action="{{ url_for('result') }}">
+                        <div class="mb-3">
+                          <label for="InputUnitCodes" class="form-label">Find one or more unit of study codes (seperate by space, case-insensitive)</label>
+                          <input type="text" class="form-control" id="InputUnitCodes" name="unitCodes" aria-describedby="UnitCodeHelp" required>
+                          <div id="UnitCodeHelp" class="form-text">E.g. info1110, INFO1113</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>   
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% include 'footer.html' %}

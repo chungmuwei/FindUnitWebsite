@@ -1,0 +1,18 @@
+{% include 'header.html' %}
+
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- body -->
+                <h1>Results</h1>
+                {% for code in unit_codes %}
+                    <p>{{ code }}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% include 'footer.html' %}
