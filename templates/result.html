@@ -7,8 +7,12 @@
             <div class="col-md-12">
                 <!-- body -->
                 <h1>Results</h1>
-                {% for code in unit_codes %}
-                    <p>{{ code }}</p>
+                {% for code, url_ls in units.items() %}
+                    <h2>{{ code }}</h2>
+                    {% for url in url_ls %}
+                        <a href="{{ url }}" target="_blank" rel="noopener noreferrer">{{ url }}</a>
+                        <br/>
+                    {% endfor %}
                 {% endfor %}
             </div>
         </div>

@@ -29,6 +29,12 @@ def valid_unitcode(string: str) -> bool:
 	"""
 	return len(string) == 8 and string[:4].isalpha() and string[4:].isnumeric()
 
+def valid_year(year: int) -> bool:
+	"""
+	Check if the input year is valid
+	"""
+	return year <= date.today().year
+
 def valid_filename(filename: str) -> bool:
 	"""
 	Check if the input file name is valid

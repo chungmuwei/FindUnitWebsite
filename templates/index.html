@@ -20,7 +20,7 @@
                         </div>
                         <div class="mb-3">
                           <label for="Year" class="form-label">Year of the session. Default to current year.</label>
-                          <input type="number" class="form-control" id="Year" name="year" aria-describedby="YearHelp" required>
+                          <input type="number" class="form-control" id="Year" name="year" value={{ current_year }} aria-describedby="YearHelp" required>
                           <div id="YearHelp" class="form-text">E.g. 2022, 2023</div>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
