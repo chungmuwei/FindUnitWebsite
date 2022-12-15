@@ -22,7 +22,7 @@ def get_args():
 ### Checking Arguments ###
 ##########################
 
-def valid_unitcode(string: str) -> bool:
+def valid_unit_code(string: str) -> bool:
 	"""
 	Check if the input string satisfies the structure of the unit code of the University of Sydney
 	A valid unit code consists of 8 characters. The first 4 are alphabets and the last 4 are numbers.
@@ -39,6 +39,6 @@ def valid_filename(filename: str) -> bool:
 	"""
 	Check if the input file name is valid
 	"""
-	extention = filename.split(".")[-1]
-	return extention == "txt" or extention == "md" or extention == "pdf"
+	extension = filename.split(".")[-1]
+	return extension == "txt" or extension == "md" or extension == "pdf"
 	

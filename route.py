@@ -25,7 +25,7 @@ def result():
         units = dict()
         # check if the unit code is valid
         for unit_code in unit_codes.split():
-            if not args.valid_unitcode(unit_code):
+            if not args.valid_unit_code(unit_code):
                 flash(unit_code.upper() + " is not a unit of study code!")
                 # return redirect(url_for("index"))
             else:
