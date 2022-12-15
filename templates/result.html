@@ -3,19 +3,19 @@
 
 {% block content %}
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <!-- body -->
-                <h1>Results</h1>
-                {% for code, url_ls in units.items() %}
-                    <h2>{{ code }}</h2>
-                    {% for url in url_ls %}
-                        <a href="{{ url }}" target="_blank" rel="noopener noreferrer">{{ url }}</a>
-                        <br/>
-                    {% endfor %}
-                {% endfor %}
+        <!-- <h1 class="border-bottom">Results</h1> -->
+        {% for code, url_ls in units.items() %}
+        <div class="row mb-4">
+            <h2>{{ code }}</h2>
+            {% for url in url_ls %}
+            <div class="col-md-4 mb-3">
+                <a href="{{ url }}" type="button" class="btn btn-outline-secondary" target="_blank" rel="noopener noreferrer">
+                    {{ url.split('/')[-1] }}
+                </a>
             </div>
-        </div>
+            {% endfor %}
+            </div>
+        {% endfor %}
     </div>
 {% endblock %}
 

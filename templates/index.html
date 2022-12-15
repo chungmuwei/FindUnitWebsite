@@ -1,8 +1,7 @@
 {% include 'header.html' %}
 
-
 {% block content %}
-    <div class="container">
+    <div class="container" style="min-height: 70vh;">
         <div class="row">
             <div class="col-md-12">
                 <!-- body -->
@@ -14,14 +13,14 @@
                     <!-- method: 要用什麼方法傳送 -->
                     <form method="POST" action="{{ url_for('result') }}">
                         <div class="mb-3">
-                          <label for="InputUnitCodes" class="form-label">Find one or more unit of study codes (separate by space, case-insensitive)</label>
+                          <label for="InputUnitCodes" class="form-label">One or more unit of study codes (separate by space, case-insensitive)</label>
                           <input type="text" class="form-control" id="InputUnitCodes" name="unitCodes" aria-describedby="UnitCodeHelp" required>
-                          <div id="UnitCodeHelp" class="form-text">E.g. info1110, INFO1113</div>
+                          <div id="UnitCodeHelp" class="form-text">The unit of study code format is 4 digits followed by 4 alphabets. E.g. <strong>INFO1110 math1021</strong></div>
                         </div>
                         <div class="mb-3">
                           <label for="Year" class="form-label">Year of the session. Default to current year.</label>
                           <input type="number" class="form-control" id="Year" name="year" value={{ current_year }} aria-describedby="YearHelp" required>
-                          <div id="YearHelp" class="form-text">E.g. 2022, 2023</div>
+                          <div id="YearHelp" class="form-text">Current year is <strong>2022</strong>. Use <strong>1</strong> to find to find all sessions in previous years</div>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
