@@ -26,11 +26,17 @@ def result():
         # check if the unit code is valid
         for unit_code in unit_codes.split():
             if not args.valid_unit_code(unit_code):
-                flash(unit_code.upper() + " is not a unit of study code!")
-                # return redirect(url_for("index"))
+                flash(unit_code.upper() + " is not in correct format! A valid unit code should be 4 letters followed by 4 digits.")
+
             else:
-                units[unit_code] = crawl.get_unit_outline_url(unit_code, year, False)
-                # return redirect(url_for("index"))
+                result = crawl.get_unit_outline_url(unit_code, year, False)
+                if result == None:
+                    flash(unit_code.upper() + " was not found!")
+                elif len(result) == 0:
+                    flash(unit_code.upper() + f" outline in  {year} was not found!")
+                else:
+                    units[unit_code] = result
+
         return render_template("result.html", unit_codes=unit_codes, units=units)
     
     else:

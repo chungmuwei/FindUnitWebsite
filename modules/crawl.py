@@ -6,7 +6,7 @@ import sys
 ### Web Crawling ###
 def get_unit_outline_url(unit_code: str, year: int, is_remote: bool) -> list[str]:
 	"""
-	Reuturn the unit outline url matching the given year and mode if exists, otherwise, return None
+	Return the unit outline url matching the given year and mode if exists, otherwise, return None
 	"""
 
 	# 1. set div id to current or archived
@@ -25,7 +25,7 @@ def get_unit_outline_url(unit_code: str, year: int, is_remote: bool) -> list[str
 		outlines = unit_soup.find("div", id = div_id).ul.findAll("li")
 	except AttributeError:
 		print(f"Unit of study code: {unit_code} not found")
-		sys.exit("Invalid Unit Code")
+		return # sys.exit("Invalid Unit Code")
 	
 	# 4. find the unit outline url matching the given year and mode
 	outline_url_candidates = []
